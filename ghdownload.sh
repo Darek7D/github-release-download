@@ -1,13 +1,13 @@
 #!/bin/bash
 
-if [ ! -n "$1" ] || [ ! -n "$2" ] || [ ! -n "$3" ]; then
-    echo "Invalid parameters provided. Info: ./ghdownload.sh <org> <repo> <token> <output_file>"
+if [ ! -n "$1" ] || [ ! -n "$2" ]; then
+    echo "Invalid parameters provided. Info: ./ghdownload.sh <org> <repo> [<output_file>]"
     exit -1
 fi
 
 org=$1
 repo=$2
-token=$3
+token=$GHDOWNLOAD_TOKEN
 output_file=$4
 
 url="https://api.github.com/repos/$org/$repo"
